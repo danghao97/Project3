@@ -23,7 +23,7 @@
         <tr>
             <td>
                 <video id="current" width="800" height="480">
-                    <source src="http://localhost:8080/video" type="video/mp4">
+                    <source src="http://{{$_SERVER['SERVER_NAME']}}:8080/video" type="video/mp4">
                 </video>
             </td>
             <td rowspan="2">
@@ -35,31 +35,31 @@
                         </tr>
                         <tr>
                             <td>
-                                <img src="http://localhost:8080/image" width="200" height="120">
+                                <img src="http://{{$_SERVER['SERVER_NAME']}}:8080/image" width="200" height="120">
                             </td>
                             <td><a href="/XemVideo">20180316_215037</a><br>00:03</td>
                         </tr>
                         <tr>
                             <td>
-                                <img src="http://localhost:8080/image" width="200" height="120">
+                                <img src="http://{{$_SERVER['SERVER_NAME']}}:8080/image" width="200" height="120">
                             </td>
                             <td><a href="/XemVideo">20180316_215037</a><br>00:03</td>
                         </tr>
                         <tr>
                             <td>
-                                <img src="http://localhost:8080/image" width="200" height="120">
+                                <img src="http://{{$_SERVER['SERVER_NAME']}}:8080/image" width="200" height="120">
                             </td>
                             <td><a href="/XemVideo">20180316_215037</a><br>00:03</td>
                         </tr>
                         <tr>
                             <td>
-                                <img src="http://localhost:8080/image" width="200" height="120">
+                                <img src="http://{{$_SERVER['SERVER_NAME']}}:8080/image" width="200" height="120">
                             </td>
                             <td><a href="/XemVideo">20180316_215037</a><br>00:03</td>
                         </tr>
                         <tr>
                             <td>
-                                <img src="http://localhost:8080/image" width="200" height="120">
+                                <img src="http://{{$_SERVER['SERVER_NAME']}}:8080/image" width="200" height="120">
                             </td>
                             <td><a href="/XemVideo">20180316_215037</a><br>00:03</td>
                         </tr>
