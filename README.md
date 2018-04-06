@@ -21,11 +21,16 @@ php artisan key:generate
 ```
 ## Step 7: Install packages of NodeJS:
 ```
-cd nodejs
 npm install
 ```
 ## Step 8: Change database info in .env file
 
+## Step 9: Migrations:
+```
+php artisan migrate
+```
+
+## Step 10:
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
