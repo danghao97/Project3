@@ -1,6 +1,0 @@
-php artisan make:migration create_nguoidung_table
-php artisan make:migration create_capdo_table
-php artisan make:migration create_loaidoituong_table
-php artisan make:migration create_doituong_table
-php artisan make:migration create_video_table
-php artisan make:migration create_canhbao_table
