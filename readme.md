@@ -1,3 +1,23 @@
+# Project3
+<p align="center">CAMERA IP</p>
+
+- PHP >= 7.0.0
+## Step 1: Clone this project.
+## Step 2: Change directory (cd) to the cloned folder.
+## Step 3: Copy file ".env.example" and save as new file named ".env"
+## Step 4: Run in terminal or command prompt:
+```
+  php composer.phar install
+```
+## Step 5: Run in terminal or command prompt:
+```
+php artisan key:generate
+```
+## Step 6: If OS is Linux, you must be change mod a+w for project folder:
+```
+-sudo chmod a+w -R Project3
+```
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">

@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 app.get('/video', (req, res) => {
-    var path = 'C:/Users/Administrator/Videos/video.mp4';
+    var path = 'F:/video.mp4';
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
@@ -35,7 +35,7 @@ app.get('/video', (req, res) => {
 });
 
 app.get('/image', (req, res) => {
-    var path = 'C:/Users/Administrator/Pictures/image.png';
+    var path = 'F:/Images/background-1086840_960_720.png';
 
     var img = fs.readFileSync(path);
     res.writeHead(200, {
