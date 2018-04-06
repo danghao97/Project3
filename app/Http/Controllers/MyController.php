@@ -24,7 +24,7 @@ class MyController extends Controller
         }
         $video = \App\Video::find($id_video);
         $videos = \App\Video::all();
-        return $video == null ? 'Video khong ton tai' : view('XemVideo', [
+        return $video == null ? 'Video khong ton tai' : view('pages.XemVideo', [
             'id_video' => $id_video,
             'video' => $video,
             'videos' => $videos

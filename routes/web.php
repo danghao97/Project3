@@ -14,7 +14,7 @@
 Route::get('/', 'MyController@Index');
 
 Route::get('/home', function () {
-    return view('home');
+    return view('pages.home');
 });
 
 Route::get('XemVideo', 'MyController@XemVideo');
