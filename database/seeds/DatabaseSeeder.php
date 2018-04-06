@@ -12,5 +12,19 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        DB::table('video')->insert([
+            [
+                'ten_video'     => 'Video 1',
+                'duong_dan'     => 'F:\video.mp4',
+                'kich_thuoc'    => '6MB',
+                'thoi_gian'     => '00:03'
+            ],
+            [
+                'ten_video'     => 'Video 2',
+                'duong_dan'     => 'F:\video.mp4',
+                'kich_thuoc'    => '18MB',
+                'thoi_gian'     => '03:00'
+            ]
+        ]);
     }
 }

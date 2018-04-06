@@ -11,28 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'MyController@Index');
 
-Route::get('/home', function() {
+Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('XemVideo/{id_video}', function ($id_video) {
-    $video = App\Video::find($id_video);
-    $videos = App\Video::all();
-    return $video == null ? 'Video khong ton tai' : view('XemVideo', ['id_video' => $id_video, 'video' => $video, 'videos' => $videos]);
-});
+Route::get('XemVideo', 'MyController@XemVideo');
+
+Route::get('XemVideo/{id_video}', 'MyController@XemVideo')->name('XemVideo');
 
 Route::get('QLTK', function () {
     return view('QLTK');
-});
-
-Route::get('getCookie', 'DangHaoController@getCookie');
-
-Route::get('setCookie', 'DangHaoController@setCookie');
-
-Route::get('Blade', function () {
-    return view('pages.laravel');
 });
