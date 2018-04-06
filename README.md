@@ -2,6 +2,8 @@
 <p align="center">CAMERA IP</p>
 
 - PHP >= 7.0.0
+- NodeJS Latest Version
+
 ## Step 1: Clone this project.
 ## Step 2: Change directory (cd) to the cloned folder.
 ## Step 3: Copy file ".env.example" and save as new file named ".env"
@@ -17,6 +19,12 @@ php artisan key:generate
 ```
 -sudo chmod a+w -R Project3
 ```
+## Step 7: Install packages of NodeJS:
+```
+cd nodejs
+npm install
+```
+## Step 8: Change database info in .env file
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
