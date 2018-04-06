@@ -2,7 +2,8 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
-app.get('/video', (req, res) => {
+app.get('/video/:id', (req, res) => {
+    console.log('xem video id = ' + req.params.id);
     var path = 'F:/video.mp4';
     const stat = fs.statSync(path);
     const fileSize = stat.size;
@@ -45,6 +46,6 @@ app.get('/image', (req, res) => {
 
 });
 
-app.listen(8080, () => {
+app.listen(3000, () => {
     console.log("express start");
 });

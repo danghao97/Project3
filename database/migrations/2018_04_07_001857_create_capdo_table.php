@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TableUser extends Migration
+class CreateCapdoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class TableUser extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('capdo', function (Blueprint $table) {
+            $table->increments('id_cap_do');
+            $table->string('ten_cap_do');
+            $table->string('muc_do_anh_huong');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class TableUser extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('capdo');
     }
 }
