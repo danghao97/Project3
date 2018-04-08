@@ -11,9 +11,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="http://{{$_SERVER['SERVER_NAME']}}/home">Home</a></li>
-                <li><a href="http://{{$_SERVER['SERVER_NAME']}}/XemVideo">XemVideo</a></li>
-                <li><a href="http://{{$_SERVER['SERVER_NAME']}}/QLTK">QLTK</a></li>
+                <li id="home"><a href="http://{{$_SERVER['SERVER_NAME']}}/home">Home</a></li>
+                <li id="xemvideo"><a href="http://{{$_SERVER['SERVER_NAME']}}/XemVideo">XemVideo</a></li>
+                <li id="qltk"><a href="http://{{$_SERVER['SERVER_NAME']}}/QLTK">QLTK</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

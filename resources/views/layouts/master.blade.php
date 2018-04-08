@@ -13,16 +13,30 @@
         <title>CAMERA - @yield('title')</title>
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+        <script type="text/javascript">
+            $(document).ready(() => {
+                var id = '@yield('navitem')';
+                var navitem = $('#' + id.trim());
+                navitem.addClass('active');
+            });
+        </script>
         <style media="screen">
             body {
-                max-width: 1300px;
-                margin: auto;
+                padding-top: 70px;
             }
         </style>
     </head>
     <body>
-        @include('layouts.header')
-        @include('layouts.body')
-        @include('layouts.footer')
+        <header>
+            @include('layouts.header')
+        </header>
+        <div class="container">
+            <div class="row">
+                @include('layouts.body')
+            </div>
+        </div>
+        <footer>
+            @include('layouts.footer')
+        </footer>
     </body>
 </html>

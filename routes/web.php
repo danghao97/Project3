@@ -22,5 +22,5 @@ Route::get('XemVideo', 'MyController@XemVideo');
 Route::get('XemVideo/{id_video}', 'MyController@XemVideo')->name('XemVideo');
 
 Route::get('QLTK', function () {
-    return view('QLTK');
+    return view('pages.QLTK');
 });
