@@ -30,4 +30,25 @@ class MyController extends Controller
             'videos' => $videos
         ]);
     }
+
+    public function QLDT() {
+        $loai_doi_tuongs = \App\LoaiDoiTuong::all();
+        $doi_tuongs = \App\DoiTuong::paginate(1);
+        return view('pages.QLDT', [
+            'loai_doi_tuongs' => $loai_doi_tuongs,
+            'doi_tuongs' => $doi_tuongs
+        ]);
+    }
+
+    public function ThemDoiTuong(Request $req) {
+        $doi_tuong = new \App\DoiTuong();
+        $doi_tuong->ten_doi_tuong = $req->ten;
+        $doi_tuong->tuoi = $req->tuoi;
+        $doi_tuong->nghe_nghiep = $req->nghenghiep;
+        $doi_tuong->chuc_vu = $req->chucvu;
+        $doi_tuong->anh_chan_dung = '';
+        $doi_tuong->id_loai_doi_tuong = $req->loaidoituong;
+        $doi_tuong->save();
+        return redirect()->route('QLDT');
+    }
 }

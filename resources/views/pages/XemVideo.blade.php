@@ -13,6 +13,12 @@
                 myVideo[0].pause();
             }
         }
+
+        function fullScreen() {
+            var myVideo = $('#current');
+            console.log(myVideo[0]);
+            myVideo[0].webkitRequestFullScreen();
+        }
     </script>
     <style media="screen">
         .list {
@@ -27,10 +33,10 @@
             </div>
             <div class="panel-body">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <video preload="metadata" id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:3000/video/{{$video->id_video}}"></video>
+                    <video id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:3000/video/{{$video->id_video}}"></video>
                 </div>
                 <br><button type="button" name="button" onclick="playPause()">Play/Pause</button>
-
+                <button type="button" name="button" onclick="fullScreen()">Full Screen</button>
                 <p>Ten video: {{$video->ten_video}}</p>
                 <p>Thời lượng quay: {{$video->thoi_gian}}</p>
                 <p>Kich thuoc: {{$video->kich_thuoc}}</p>
@@ -44,21 +50,20 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Video khac</h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body row">
                 <div class="list">
-                    <table>
-                        @foreach($videos as $value)
-                            <tr>
-                                <td>
-                                    <img class="img-responsive" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image" width="200" height="120">
-                                </td>
-                                <td><a href="/XemVideo/{{$value->id_video}}">{{$value->ten_video}}</a><br>{{$value->thoi_gian}}</td>
-                            </tr>
-                        @endforeach
-                    </table>
+                    @foreach($videos as $value)
+                        <div class="col-md-9">
+                            <img class="img-responsive" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image">
+                        </div>
+                        <div class="col-md-3">
+                            <a href="/XemVideo/{{$value->id_video}}">{{$value->ten_video}}</a>
+                            <br>
+                            {{$value->thoi_gian}}
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
-
 @endsection

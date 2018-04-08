@@ -24,3 +24,7 @@ Route::get('XemVideo/{id_video}', 'MyController@XemVideo')->name('XemVideo');
 Route::get('QLTK', function () {
     return view('pages.QLTK');
 });
+
+Route::get('QLDT', 'MyController@QLDT')->name('QLDT');
+
+Route::post('QLDT', 'MyController@ThemDoiTuong');
