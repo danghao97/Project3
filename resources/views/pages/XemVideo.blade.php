@@ -27,7 +27,7 @@
             </div>
             <div class="panel-body">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <video id="current" llowfullscreen class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:3000/video/{{$video->id_video}}"></video>
+                    <video id="current" autoplay class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:3000/video/{{$video->id_video}}"></video>
                 </div>
                 <br><button type="button" name="button" onclick="playPause()">Play/Pause</button>
 
