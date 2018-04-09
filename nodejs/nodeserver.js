@@ -2,10 +2,11 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 var config = require('./config.js');
+var rootPath = config.STORAGE_PATH;
 
 app.get('/video/:id', (req, res) => {
     console.log('xem video id = ' + req.params.id);
-    var path = 'F:/video.mp4';
+    var path = rootPath + '/video.mp4';
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
@@ -37,14 +38,13 @@ app.get('/video/:id', (req, res) => {
 });
 
 app.get('/image', (req, res) => {
-    var path = 'F:/Images/background-1086840_960_720.png';
+    var path = rootPath + '/image.png';
 
     var img = fs.readFileSync(path);
     res.writeHead(200, {
         'Content-Type': 'image/jpeg'
     });
     res.end(img, 'binary');
-
 });
 
 app.listen(3000, () => {
