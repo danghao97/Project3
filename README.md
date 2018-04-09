@@ -6,7 +6,7 @@
 
 ## Step 1: Clone this project.
 ## Step 2: Change directory (cd) to the cloned folder.
-## Step 3: Copy configuration file
+## Step 3: Copy configuration file:
 ```
 Copy file ".env.example" and save as new file named ".env"
 Copy file "nodejs/config.js.example" and save as new file named "nodejs/config.js"
@@ -27,7 +27,7 @@ php artisan key:generate
 ```
 npm install
 ```
-## Step 8: Change database info in .env file and nodejs/config.js
+## Step 8: Change database info in .env file and nodejs/config.js:
 ```
 DB_DATABASE
 DB_USERNAME
@@ -39,7 +39,11 @@ DB_PASSWORD
 php artisan migrate
 ```
 
-## Step 10:
+## Step 10: Run NodeJS Server:
+```
+node nodejs/nodeserver
+```
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
