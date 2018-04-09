@@ -6,7 +6,11 @@
 
 ## Step 1: Clone this project.
 ## Step 2: Change directory (cd) to the cloned folder.
-## Step 3: Copy file ".env.example" and save as new file named ".env"
+## Step 3: Copy configuration file
+```
+Copy file ".env.example" and save as new file named ".env"
+Copy file "nodejs/config.js.example" and save as new file named "nodejs/config.js"
+```
 ## Step 4: Run in terminal or command prompt:
 ```
   php composer.phar install

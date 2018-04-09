@@ -1,0 +1,7 @@
+var config = {};
+
+config.DB_DATABASE = 'homestead';
+config.DB_USERNAME = 'homestead';
+config.DB_PASSWORD = 'secret';
+
+module.exports = config;
