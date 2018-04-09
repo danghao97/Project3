@@ -21,7 +21,7 @@ Route::get('XemVideo/{id_video}', 'MyController@XemVideo')->name('XemVideo');
 
 Route::get('QLTK', 'MyController@QLTK');
 
-Route::get('QLDT', 'MyController@QLDT');
+Route::get('QLDT', 'MyController@QLDT')->name('QLDT');
 
 Route::post('QLDT', 'MyController@ThemDoiTuong');
 
