@@ -1,7 +1,7 @@
 # Project3
 <p align="center">CAMERA IP</p>
 
-- PHP >= 7.0.0
+- PHP >= 7.1.3
 - NodeJS Latest Version
 
 ## Step 1: Clone this project.
