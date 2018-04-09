@@ -13,10 +13,6 @@ class MyController extends Controller
         $this->middleware('MyMiddle');
     }
 
-    public function Index() {
-        return view('pages.home');
-    }
-
     public function Home() {
         return view('pages.home');
     }
@@ -27,18 +23,22 @@ class MyController extends Controller
             $videos = \App\Video::all();
             $num = count($videos);
             if ($num == 0) {
-                echo 'Hien chua co video nao';
-                return;
+                $params = ['error' => 'Hiện chưa có video nào'];
+                return view('pages.XemVideo', $params);
             }
             return redirect()->route("XemVideo", ['id_video' => $videos[0]->id_video]);
         }
         $video = \App\Video::find($id_video);
         $videos = \App\Video::all();
-        return $video == null ? 'Video khong ton tai' : view('pages.XemVideo', [
-            'id_video' => $id_video,
-            'video' => $video,
-            'videos' => $videos
-        ]);
+        $params = ['error' => 'Video không tồn tại'];
+        if ($video != null) {
+            $params = [
+                'id_video' => $id_video,
+                'video' => $video,
+                'videos' => $videos
+            ];
+        }
+        return view('pages.XemVideo', $params);
     }
 
     public function QLTK() {

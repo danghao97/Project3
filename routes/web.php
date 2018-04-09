@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'MyController@Index')->name('/');
+Route::get('/', 'MyController@Home')->name('/');
 
 Route::get('/home', 'MyController@Home');
 
@@ -25,6 +25,8 @@ Route::get('QLDT', 'MyController@QLDT');
 
 Route::post('QLDT', 'MyController@ThemDoiTuong');
 
+Route::get('logout', 'MyController@Logout');
+
 Route::get('config', 'ConfigController@Config')->name('config');
 
 Route::post('config', 'ConfigController@Save');
@@ -32,5 +34,3 @@ Route::post('config', 'ConfigController@Save');
 Route::get('login', 'LoginController@Login')->name('login');
 
 Route::post('login', 'LoginController@DoLogin');
-
-Route::get('logout', 'MyController@Logout');

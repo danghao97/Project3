@@ -1,6 +1,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
+var config = require('./config.js');
 
 app.get('/video/:id', (req, res) => {
     console.log('xem video id = ' + req.params.id);

@@ -23,7 +23,12 @@ php artisan key:generate
 ```
 npm install
 ```
-## Step 8: Change database info in .env file
+## Step 8: Change database info in .env file and nodejs/config.js
+```
+DB_DATABASE
+DB_USERNAME
+DB_PASSWORD
+```
 
 ## Step 9: Migrations:
 ```

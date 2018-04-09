@@ -13,11 +13,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             // CanhBaoTableSeeder::class,
-            // CapDoTableSeeder::class,
+            CapDoTableSeeder::class,
             // DoiTuongTableSeeder::class,
-            // LoaiDoiTuongTableSeeder::class,
-            UsersTableSeeder::class,
-            // VideoTableSeeder::class
+            LoaiDoiTuongTableSeeder::class,
+            // UsersTableSeeder::class,
+            VideoTableSeeder::class
         ]);
     }
 }

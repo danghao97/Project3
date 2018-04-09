@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Mật khẩu</label>
-                                    <input type="text" class="form-control" placeholder="Mật khẩu" name="password">
+                                    <input type="password" class="form-control" placeholder="Mật khẩu" name="password">
                                 </div>
                                 <button type="submit" class="btn btn-primary">SUBMIT</button>
                             </form>

@@ -21,6 +21,7 @@ class ConfigController extends Controller
         $user->email = $req->email;
         $user->password = bcrypt($req->password);
         $user->save();
+        \Artisan::call('db:seed');
         $errors = new MessageBag(['title' => 'Đã tạo tài khoản quản trị hãy đăng nhập bằng tài khoản vừa tạo']);
         return redirect()->route('login')->withErrors($errors);
     }
