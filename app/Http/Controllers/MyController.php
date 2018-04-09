@@ -3,12 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\MessageBag;
 
 class MyController extends Controller
 {
+    public function __construct() {
+        $this->middleware('MyMiddle');
+    }
+
     public function Index() {
-        // redirect login if logout
-        return view('index');
+        return view('pages.home');
+    }
+
+    public function Home() {
+        return view('pages.home');
     }
 
     public function XemVideo($id_video = null)
@@ -31,12 +41,30 @@ class MyController extends Controller
         ]);
     }
 
-    public function QLDT() {
+    public function QLTK() {
+        return view('pages.QLTK');
+    }
+
+    public function QLDT(Request $req) {
         $loai_doi_tuongs = \App\LoaiDoiTuong::all();
-        $doi_tuongs = \App\DoiTuong::paginate(1);
+        $doi_tuongs = \App\DoiTuong::paginate(2, ['*'], 'page_dt');
+        $users = \App\User::paginate(2, ['*'], 'page_nd');
+        $videos = \App\Video::paginate('2', ['*'], 'page_vd');
+
+        $tab_active = 'quanlydoituong';
+        if ($req->has('page_dt')) {
+            $tab_active = 'quanlydoituong';
+        } else if ($req->has('page_nd')) {
+            $tab_active = 'quanlynguoidung';
+        } else if ($req->has('page_vd')) {
+            $tab_active = 'quanlyvideo';
+        }
         return view('pages.QLDT', [
+            'tab_active' => $tab_active,
             'loai_doi_tuongs' => $loai_doi_tuongs,
-            'doi_tuongs' => $doi_tuongs
+            'doi_tuongs' => $doi_tuongs,
+            'users' => $users,
+            'videos' => $videos
         ]);
     }
 
@@ -50,5 +78,19 @@ class MyController extends Controller
         $doi_tuong->id_loai_doi_tuong = $req->loaidoituong;
         $doi_tuong->save();
         return redirect()->route('QLDT');
+    }
+
+    public function Config() {
+        return view('layouts.config');
+    }
+
+    public function Logout() {
+        $login = redirect()->route('login');
+        if (!Auth::check()) {
+            $errors = new MessageBag(['title' => 'Bạn chưa đăng nhập vào hệ thống']);
+            return $login->withErrors($errors);
+        }
+        Auth::logout();
+        return $login;
     }
 }

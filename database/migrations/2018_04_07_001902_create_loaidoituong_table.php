@@ -17,7 +17,7 @@ class CreateLoaidoituongTable extends Migration
             $table->increments('id_loai_doi_tuong');
             $table->string('ten_loai');
             $table->integer('id_cap_do')->unsigned();
-            $table->foreign('id_cap_do')->references('id_cap_do')->on('capdo');
+            $table->foreign('id_cap_do')->references('id_cap_do')->on('capdo')->onDelete('cascade');
             $table->timestamps();
         });
     }

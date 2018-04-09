@@ -21,7 +21,7 @@ class CreateDoituongTable extends Migration
             $table->string('chuc_vu');
             $table->string('anh_chan_dung');
             $table->integer('id_loai_doi_tuong')->unsigned();
-            $table->foreign('id_loai_doi_tuong')->references('id_loai_doi_tuong')->on('loaidoituong');
+            $table->foreign('id_loai_doi_tuong')->references('id_loai_doi_tuong')->on('loaidoituong')->onDelete('cascade');
             $table->timestamps();
         });
     }

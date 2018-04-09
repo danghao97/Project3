@@ -11,20 +11,26 @@
 |
 */
 
-Route::get('/', 'MyController@Index');
+Route::get('/', 'MyController@Index')->name('/');
 
-Route::get('/home', function () {
-    return view('pages.home');
-});
+Route::get('/home', 'MyController@Home');
 
 Route::get('XemVideo', 'MyController@XemVideo');
 
 Route::get('XemVideo/{id_video}', 'MyController@XemVideo')->name('XemVideo');
 
-Route::get('QLTK', function () {
-    return view('pages.QLTK');
-});
+Route::get('QLTK', 'MyController@QLTK');
 
-Route::get('QLDT', 'MyController@QLDT')->name('QLDT');
+Route::get('QLDT', 'MyController@QLDT');
 
 Route::post('QLDT', 'MyController@ThemDoiTuong');
+
+Route::get('config', 'ConfigController@Config')->name('config');
+
+Route::post('config', 'ConfigController@Save');
+
+Route::get('login', 'LoginController@Login')->name('login');
+
+Route::post('login', 'LoginController@DoLogin');
+
+Route::get('logout', 'MyController@Logout');

@@ -18,6 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('que_quan')->nullable();
+            $table->string('nam_sinh')->nullable();
+            $table->string('gioi_tinh')->nullable();
+            $table->string('don_vi')->nullable();
+            $table->string('so_dien_thoai')->nullable();
+            $table->string('chuc_vu')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

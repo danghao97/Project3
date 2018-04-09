@@ -15,6 +15,7 @@
                 <li id="xemvideo"><a href="http://{{$_SERVER['SERVER_NAME']}}/XemVideo">XemVideo</a></li>
                 <li id="qltk"><a href="http://{{$_SERVER['SERVER_NAME']}}/QLTK">QLTK</a></li>
                 <li id="qldt"><a href="http://{{$_SERVER['SERVER_NAME']}}/QLDT">QLDT</a></li>
+                <li id="logout"><a href="http://{{$_SERVER['SERVER_NAME']}}/logout">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

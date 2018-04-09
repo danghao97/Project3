@@ -1,4 +1,7 @@
-<div class="panel panel-default">
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Doi tuong</h3>
+    </div>
     <div class="panel-body">
         @foreach ($doi_tuongs as $doi_tuong)
             <div class="panel panel-default">
@@ -18,12 +21,13 @@
                                 <div class="col-md-5">
                                     <label>Mã số:</label> {{$doi_tuong->id_doi_tuong}}<br>
                                     <label>Tên đối tượng:</label> {{$doi_tuong->ten_doi_tuong}}<br>
-                                    <label>Tuổi:</label> {{$doi_tuong->tuoi}}
+                                    <label>Tuổi:</label> {{$doi_tuong->tuoi}}<br>
+                                    <label>Nghề nghiệp:</label> {{$doi_tuong->nghe_nghiep}}
                                 </div>
                                 <div class="col-md-5">
-                                    <label>Nghề nghiệp:</label> {{$doi_tuong->nghe_nghiep}}<br>
                                     <label>Chức vụ:</label> {{$doi_tuong->chuc_vu}}<br>
-                                    <label>Loại đối tượng:</label> {{$doi_tuong->LoaiDoiTuong->ten_loai}}
+                                    <label>Loại đối tượng:</label> {{$doi_tuong->LoaiDoiTuong->ten_loai}}<br>
+                                    <label>Mức độ ảnh hưởng:</label> {{$doi_tuong->LoaiDoiTuong->CapDo->muc_do_anh_huong}}
                                 </div>
                             </div>
                         </div>
@@ -41,6 +45,6 @@
                 </div>
             </div>
         @endforeach
-        {!!$doi_tuongs->links()!!}
+        {!!$doi_tuongs->links();!!}
     </div>
 </div>
