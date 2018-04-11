@@ -13,6 +13,10 @@
 
 View::share('NodeJS_Port', env('NODEJS_PORT', '3000'));
 
+Route::get('/phpinfo', function() {
+    phpinfo();
+});
+
 Route::get('/', 'MyController@Home')->name('/');
 
 Route::get('/home', 'MyController@Home');
