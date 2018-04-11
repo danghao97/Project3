@@ -32,6 +32,7 @@ npm install
 DB_DATABASE
 DB_USERNAME
 DB_PASSWORD
+NODEJS_PORT
 ```
 
 ## Step 9: Migrations:
