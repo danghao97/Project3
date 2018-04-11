@@ -58,3 +58,37 @@
         </form>
     </div>
 </div>
+<div>
+    <div class="card border-success">
+        <div class="h5 card-header text-success">
+            Videos
+        </div>
+        <div class="card-body">
+            <div id = "myCarousel" class = "carousel slide" data-ride="carousel">
+                <div class = "carousel-inner">
+                    @php ($first = true)
+                    @foreach($videos as $value)
+                        <div class = "carousel-item{!!($first ? ' active' : '')!!}">
+                            <div class = "thumbnail">
+                                <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image" alt="Generic placeholder thumbnail">
+                            </div>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h4>{{$value->ten_video}}</h4>
+                                <p>{{$value->thoi_gian}}</p>
+                            </div>
+                        </div>
+                        @php ($first = false)
+                    @endforeach
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

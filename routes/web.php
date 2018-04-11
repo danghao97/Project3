@@ -37,6 +37,7 @@ Route::get('login', 'LoginController@Login')->name('login');
 
 Route::post('login', 'LoginController@DoLogin');
 
-Route::get('bootstrap', function() {
-    return view('pages.Bootstrap');
+Route::get('DelData', function() {
+    \Artisan::call('migrate:refresh');
+    return redirect()->route('/');
 });

@@ -11,8 +11,16 @@
                 <li class="nav-item" id="xemvideo"><a class="nav-link" href="http://{{$_SERVER['SERVER_NAME']}}/XemVideo">XemVideo</a></li>
                 <li class="nav-item" id="qltk"><a class="nav-link" href="http://{{$_SERVER['SERVER_NAME']}}/QLTK">QLTK</a></li>
                 <li class="nav-item" id="qldt"><a class="nav-link" href="http://{{$_SERVER['SERVER_NAME']}}/QLDT">QLDT</a></li>
-                <li class="nav-item" id="logout"><a class="nav-link" href="http://{{$_SERVER['SERVER_NAME']}}/logout">Logout</a></li>
             </ul>
+            <div class="navbar-nav dropdown ml-auto">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cài đặt
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="http://{{$_SERVER['SERVER_NAME']}}/DelData">Xóa hết dữ liệu</a>
+                    <a class="dropdown-item" href="http://{{$_SERVER['SERVER_NAME']}}/logout">Logout</a>
+                </div>
+            </div>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
