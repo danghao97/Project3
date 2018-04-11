@@ -47,6 +47,6 @@ app.get('/image', (req, res) => {
     res.end(img, 'binary');
 });
 
-app.listen(3000, () => {
-    console.log("express start on root directory");
+app.listen(config.PORT, () => {
+    console.log("express start on port " + config.PORT);
 });

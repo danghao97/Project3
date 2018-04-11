@@ -70,7 +70,7 @@
                     @foreach($videos as $value)
                         <div class = "carousel-item{!!($first ? ' active' : '')!!}">
                             <div class = "thumbnail">
-                                <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image" alt="Generic placeholder thumbnail">
+                                <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/image" alt="Generic placeholder thumbnail">
                             </div>
                             <div class="carousel-caption d-none d-md-block">
                                 <h4>{{$value->ten_video}}</h4>

@@ -25,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-md-2">
                                         <label>Photo:</label><br>
-                                        <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image">
+                                        <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/image">
                                     </div>
                                     <div class="col-md-5">
                                         <label>Mã số:</label> {{$doi_tuong->id_doi_tuong}}<br>
@@ -45,7 +45,7 @@
                                     <div class="col-md-2">
                                         <label>Videos:</label>
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <video id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:3000/video/1"></video>
+                                            <video id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/video/1"></video>
                                         </div>
                                     </div>
                                 </div>

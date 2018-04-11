@@ -4,7 +4,7 @@
     </div>
     <div class="card-body">
         <div class="embed-responsive embed-responsive-16by9">
-            <video id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:3000/video/{{$video->id_video}}"></video>
+            <video id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/video/{{$video->id_video}}"></video>
         </div>
         <br><button type="button" name="button" onclick="playPause()">Play/Pause</button>
         <button type="button" name="button" onclick="fullScreen()">Full Screen</button>

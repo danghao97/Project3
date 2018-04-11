@@ -7,7 +7,7 @@
             @foreach($videos as $value)
                 <div class="row">
                     <div class="col-md-9">
-                        <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image">
+                        <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/image">
                     </div>
                     <div class="col-md-3">
                         <a href="/XemVideo/{{$value->id_video}}">{{$value->ten_video}}</a>
