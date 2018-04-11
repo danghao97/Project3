@@ -1,11 +1,11 @@
 <div class="card border-success">
     <div class="h5 card-header text-success">
-        Doi tuong
+        Đối tượng
     </div>
     <div class="card-body">
         @if (count($doi_tuongs) == 0)
             <div class="h2">
-                Chưa có đối tượng nào
+                Chưa có đối tượng nào, hãy thêm ngay
             </div>
         @else
             @foreach ($doi_tuongs as $doi_tuong)
