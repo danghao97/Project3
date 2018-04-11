@@ -1,17 +1,20 @@
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Video khac</h3>
+<div class="card border-success">
+    <div class="h5 card-header text-success">
+        Video khác
     </div>
-    <div class="panel-body row">
+    <div class="card-body row">
         <div class="list">
             @foreach($videos as $value)
-                <div class="col-md-9">
-                    <img class="img-responsive" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image">
-                </div>
-                <div class="col-md-3">
-                    <a href="/XemVideo/{{$value->id_video}}">{{$value->ten_video}}</a>
-                    <br>
-                    {{$value->thoi_gian}}
+                <div class="row">
+                    <div class="col-md-9">
+                        <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image">
+                    </div>
+                    <div class="col-md-3">
+                        <a href="/XemVideo/{{$value->id_video}}">{{$value->ten_video}}</a>
+                        <br>
+                        {{$value->thoi_gian}}
+                    </div>
+                    <div class="w-100"></div>
                 </div>
             @endforeach
         </div>

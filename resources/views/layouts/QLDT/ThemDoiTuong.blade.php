@@ -1,29 +1,29 @@
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Giam sat</h3>
+<div class="card border-success">
+    <div class="h5 card-header text-success">
+        Giám sát
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         <form method='POST'>
             {{ csrf_field() }}
             <div class="form-group">
-                <label for="name">Ten doi tuong</label>
-                <input type="text" class="form-control" placeholder="Ten doi tuong" name="ten">
+                <label for="name">Tên đối tượng</label>
+                <input id="name" type="text" class="form-control" placeholder="Tên đối tượng" name="ten">
             </div>
             <div class="form-group">
-                <label for="namsinh">Tuoi</label>
-                <input type="text" class="form-control" placeholder="Tuoi" name="tuoi">
+                <label for="namsinh">Tuổi</label>
+                <input id="namsinh" type="text" class="form-control" placeholder="Tuổi" name="tuoi">
             </div>
             <div class="form-group">
-                <label for="namsinh">Nghe nghiep</label>
-                <input type="text" class="form-control" placeholder="Nghe nghiep" name="nghenghiep">
+                <label for="nghenghiep">Nghề nghiệp</label>
+                <input id="nghenghiep" type="text" class="form-control" placeholder="Nghề nghiệp" name="nghenghiep">
             </div>
             <div class="form-group">
-                <label for="namsinh">Chuc vu</label>
-                <input type="text" class="form-control" placeholder="Chuc vu" name="chucvu">
+                <label for="chucvu">Chức vụ</label>
+                <input id="chucvu" type="text" class="form-control" placeholder="Chức vụ" name="chucvu">
             </div>
             <div class="form-group">
-                <label for="exampleSelect1">Loai doi tuong</label>
-                <select class="form-control" name="loaidoituong">
+                <label for="loaidoituong">Loại đối tượng</label>
+                <select id="loaidoituong" class="form-control" name="loaidoituong">
                     @foreach ($loai_doi_tuongs as $loai_doi_tuong)
                         <option value="{{$loai_doi_tuong->id_loai_doi_tuong}}">{{$loai_doi_tuong->ten_loai}}</option>
                     @endforeach

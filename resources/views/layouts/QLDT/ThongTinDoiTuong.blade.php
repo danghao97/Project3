@@ -1,27 +1,31 @@
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Doi tuong</h3>
+<div class="card border-success">
+    <div class="h5 card-header text-success">
+        Doi tuong
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         @if (count($doi_tuongs) == 0)
-            <div class="h1">
+            <div class="h2">
                 Chưa có đối tượng nào
             </div>
         @else
             @foreach ($doi_tuongs as $doi_tuong)
-                <div class="panel panel-default">
-                    <div class="panel-body">
+                <div class="card border-success">
+                    <div class="card-body">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#info{{$doi_tuong->id_doi_tuong}}">{{$doi_tuong->ten_doi_tuong}}</a></li>
-                            <li><a data-toggle="tab" href="#video{{$doi_tuong->id_doi_tuong}}">Videos</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link show active" data-toggle="tab" href="#info{{$doi_tuong->id_doi_tuong}}">{{$doi_tuong->ten_doi_tuong}}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#video{{$doi_tuong->id_doi_tuong}}">Videos</a>
+                            </li>
                         </ul>
 
                         <div class="tab-content">
-                            <div id="info{{$doi_tuong->id_doi_tuong}}" class="tab-pane fade in active">
+                            <div id="info{{$doi_tuong->id_doi_tuong}}" class="tab-pane fade show active">
                                 <div class="row">
                                     <div class="col-md-2">
                                         <label>Photo:</label><br>
-                                        <img class="img-responsive" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image">
+                                        <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:3000/image">
                                     </div>
                                     <div class="col-md-5">
                                         <label>Mã số:</label> {{$doi_tuong->id_doi_tuong}}<br>

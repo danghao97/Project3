@@ -51,13 +51,13 @@ class MyController extends Controller
         $users = \App\User::paginate(2, ['*'], 'page_nd');
         $videos = \App\Video::paginate('2', ['*'], 'page_vd');
 
-        $tab_active = 'quanlydoituong';
+        $tab_active = 'qldt';
         if ($req->has('page_dt')) {
-            $tab_active = 'quanlydoituong';
+            $tab_active = 'qldt';
         } else if ($req->has('page_nd')) {
-            $tab_active = 'quanlynguoidung';
+            $tab_active = 'qlnd';
         } else if ($req->has('page_vd')) {
-            $tab_active = 'quanlyvideo';
+            $tab_active = 'qlvd';
         }
         return view('pages.QLDT', [
             'tab_active' => $tab_active,

@@ -4,10 +4,10 @@
 @endsection
 @section('navitem')home @endsection
 @section('content')
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <h3 class="panel-title">Home page</h3>
+    <div class="card border-success">
+        <div class="h5 card-header text-success">
+            Home page
         </div>
-        <div class="panel-body">Home page</div>
+        <div class="card-body">Home page</div>
     </div>
 @endsection

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{app()->getLocale()}}" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!--[if lt IE 9]>
             <script src="../../assets/js/ie8-responsive-file-warning.js"></script>
         <![endif]-->
@@ -24,6 +25,9 @@
             body {
                 padding-top: 70px;
             }
+            label {
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -32,7 +36,9 @@
         </header>
         <div class="container">
             <div class="row">
-                @include('layouts.body')
+                <div class="col-md-12">
+                    @include('layouts.body')
+                </div>
             </div>
         </div>
         <footer>

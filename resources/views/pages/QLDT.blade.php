@@ -4,28 +4,36 @@
 @endsection
 @section('navitem')qldt @endsection
 @section('content')
-    <ul class="nav nav-tabs">
-        <li {!!($tab_active == 'quanlydoituong' ? 'class="active"' : '')!!}><a data-toggle="tab" href="#quanlydoituong">Đối tượng</a></li>
-        <li {!!($tab_active == 'quanlynguoidung' ? 'class="active"' : '')!!}><a data-toggle="tab" href="#quanlynguoidung">Người dùng</a></li>
-        <li {!!($tab_active == 'quanlyvideo' ? 'class="active"' : '')!!}><a data-toggle="tab" href="#quanlyvideo">Video</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a data-toggle="tab" href="#qldt2" class="nav-link {!!($tab_active == 'qldt' ? 'active show' : '')!!}">Đối tượng</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="tab" href="#qlnd" class="nav-link {!!($tab_active == 'qlnd' ? 'active show' : '')!!}">Người dùng</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="tab" href="#qlvd" class="nav-link {!!($tab_active == 'qlvd' ? 'active show' : '')!!}">Video</a>
+        </li>
     </ul>
 
     <div class="tab-content">
-        <div id="quanlydoituong" class="tab-pane fade {!!($tab_active == 'quanlydoituong' ? 'in active' : '')!!}">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="col-md-9">
-                        @include('layouts.QLDT.ThongTinDoiTuong')
-                    </div>
-                    <div class="col-md-3">
-                        @include('layouts.QLDT.ThemDoiTuong')
+        <div id="qldt2" class="tab-pane fade {!!($tab_active == 'qldt' ? 'show active' : '')!!}">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-9">
+                            @include('layouts.QLDT.ThongTinDoiTuong')
+                        </div>
+                        <div class="col-md-3">
+                            @include('layouts.QLDT.ThemDoiTuong')
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="quanlynguoidung" class="tab-pane fade {!!($tab_active == 'quanlynguoidung' ? 'in active' : '')!!}">
-            <div class="panel panel-default">
-                <div class="panel-body">
+        <div id="qlnd" class="tab-pane fade {!!($tab_active == 'qlnd' ? 'show active' : '')!!}">
+            <div class="card">
+                <div class="card-body">
                     <div class="h3">
                         Quản lý người dùng
                     </div>
@@ -33,11 +41,11 @@
                 </div>
             </div>
         </div>
-        <div id="quanlyvideo" class="tab-pane fade {!!($tab_active == 'quanlyvideo' ? 'in active' : '')!!}">
-            <div class="panel panel-default">
-                <div class="panel-body">
+        <div id="qlvd" class="tab-pane fade {!!($tab_active == 'qlvd' ? 'show active' : '')!!}">
+            <div class="card">
+                <div class="card-body">
                     <div class="h3">
-                        Quan ly video
+                        Quản lý video
                     </div>
                     {!!$videos->links()!!}
                 </div>

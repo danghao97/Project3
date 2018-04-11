@@ -34,3 +34,7 @@ Route::post('config', 'ConfigController@Save');
 Route::get('login', 'LoginController@Login')->name('login');
 
 Route::post('login', 'LoginController@DoLogin');
+
+Route::get('bootstrap', function() {
+    return view('pages.Bootstrap');
+});
