@@ -4,10 +4,16 @@
 @endsection
 @section('navitem')home @endsection
 @section('content')
-    <div class="card border-success">
-        <div class="h5 card-header text-success">
-            Home page
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    @include('layouts.GiamSat.CurrentVideo')
+                </div>
+                <div class="col-md-4">
+                    @include('layouts.GiamSat.FormSearch')
+                </div>
+            </div>
         </div>
-        <div class="card-body">Home page</div>
     </div>
 @endsection

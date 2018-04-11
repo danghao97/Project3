@@ -13,8 +13,27 @@ class MyController extends Controller
         $this->middleware('MyMiddle');
     }
 
-    public function Home() {
-        return view('pages.home');
+    public function Home($id_video = null) {
+			if ($id_video == null) {
+            $videos = \App\Video::all();
+            $num = count($videos);
+            if ($num == 0) {
+                $params = ['error' => 'Hiện chưa có video nào'];
+                return view('pages.home', $params);
+            }
+            return redirect()->route("home", ['id_video' => $videos[0]->id_video]);
+        }
+        $video = \App\Video::find($id_video);
+        $videos = \App\Video::all();
+        $params = ['error' => 'Video không tồn tại'];
+        if ($video != null) {
+            $params = [
+                'id_video' => $id_video,
+                'video' => $video,
+                'videos' => $videos
+            ];
+        }
+        return view('pages.home', $params);
     }
 
     public function XemVideo($id_video = null)

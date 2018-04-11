@@ -15,6 +15,8 @@ Route::get('/', 'MyController@Home')->name('/');
 
 Route::get('/home', 'MyController@Home');
 
+Route::get('/home/{id_video}', 'MyController@Home')->name('home');
+
 Route::get('XemVideo', 'MyController@XemVideo');
 
 Route::get('XemVideo/{id_video}', 'MyController@XemVideo')->name('XemVideo');
