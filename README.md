@@ -1,5 +1,5 @@
 # Project3
-<p align="center"><h1>CAMERA IP</h1></p>
+<p align="center">CAMERA IP</p>
 
 ## Requirements
 - PHP Version >= 7.1.3
