@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             // DoiTuongTableSeeder::class,
             LoaiDoiTuongTableSeeder::class,
             // UsersTableSeeder::class,
-            VideoTableSeeder::class
+            // VideoTableSeeder::class
         ]);
     }
 }

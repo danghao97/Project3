@@ -2,7 +2,7 @@
 @section('title')
     Quản lý đối tượng
 @endsection
-@section('navitem')qldt @endsection
+@section('navitem')qlht @endsection
 @section('content')
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
@@ -22,10 +22,10 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-9">
-                            @include('layouts.QLDT.ThongTinDoiTuong')
+                            @include('layouts.QLHT.DoiTuong.ThongTinDoiTuong')
                         </div>
                         <div class="col-md-3">
-                            @include('layouts.QLDT.ThemDoiTuong')
+                            @include('layouts.QLHT.DoiTuong.ThemDoiTuong')
                         </div>
                     </div>
                 </div>
@@ -34,20 +34,28 @@
         <div id="qlnd" class="tab-pane fade {!!($tab_active == 'qlnd' ? 'show active' : '')!!}">
             <div class="card">
                 <div class="card-body">
-                    <div class="h3">
-                        Quản lý người dùng
+                    <div class="row">
+                        <div class="col-md-9">
+                            @include('layouts.QLHT.NguoiDung.DanhSach')
+                        </div>
+                        <div class="col-md-3">
+                            @include('layouts.QLHT.NguoiDung.ThemNguoiDung')
+                        </div>
                     </div>
-                    {!!$users->links()!!}
                 </div>
             </div>
         </div>
         <div id="qlvd" class="tab-pane fade {!!($tab_active == 'qlvd' ? 'show active' : '')!!}">
             <div class="card">
                 <div class="card-body">
-                    <div class="h3">
-                        Quản lý video
+                    <div class="row">
+                        <div class="col-md-9">
+                            @include('layouts.QLHT.Video.DanhSach')
+                        </div>
+                        <div class="col-md-3">
+                            @include('layouts.QLHT.Video.ThemVideo')
+                        </div>
                     </div>
-                    {!!$videos->links()!!}
                 </div>
             </div>
         </div>

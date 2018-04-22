@@ -28,6 +28,7 @@
         <style media="screen">
             body {
                 padding-top: 70px;
+                padding-bottom: 70px;
             }
             label {
                 font-weight: bold;

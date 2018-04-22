@@ -13,8 +13,9 @@
                     </button>
                     <div class="dropdown-menu">
                         <input class="form-control" id="doituong" type="text" placeholder="Tìm kiếm">
-                        <a class="dropdown-item" href="#">A</a>
-                        <a class="dropdown-item" href="#">B</a>
+                        @foreach($doi_tuongs as $value)
+							<a class="dropdown-item" href="/home/{{$value->id_doi_tuong}}">{{$value->ten_doi_tuong}}</a>
+						@endforeach
                     </div>
                 </div>
             </div>
@@ -64,31 +65,37 @@
             Videos
         </div>
         <div class="card-body">
-            <div id = "myCarousel" class = "carousel slide" data-ride="carousel">
-                <div class = "carousel-inner">
-                    @php ($first = true)
-                    @foreach($videos as $value)
-                        <div class = "carousel-item{!!($first ? ' active' : '')!!}">
-                            <div class = "thumbnail">
-                                <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/image" alt="Generic placeholder thumbnail">
+            @if (isset($videos))
+                <div id = "myCarousel" class = "carousel slide" data-ride="carousel">
+                    <div class = "carousel-inner">
+                        @php ($first = true)
+                        @foreach($videos as $video)
+                            <div class = "carousel-item{!!($first ? ' active' : '')!!}">
+                                <div class = "thumbnail">
+                                    <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/image" alt="Generic placeholder thumbnail">
+                                </div>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h4>{{$video->ten_video}}</h4>
+                                    <p>{{$video->thoi_gian}}</p>
+                                </div>
                             </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h4>{{$value->ten_video}}</h4>
-                                <p>{{$value->thoi_gian}}</p>
-                            </div>
-                        </div>
-                        @php ($first = false)
-                    @endforeach
+                            @php ($first = false)
+                        @endforeach
+                    </div>
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+            @else
+                <div class="h3">
+                    Đối tượng không có video nào
+                </div>
+            @endif
         </div>
     </div>
 </div>
