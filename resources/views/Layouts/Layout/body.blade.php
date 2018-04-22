@@ -1,2 +1,2 @@
-@include('layouts.maincontent')
-@include('layouts.sidebar')
+@include('Layouts.Layout.maincontent')
+@include('Layouts.Layout.sidebar')

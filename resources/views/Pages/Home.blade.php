@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('Layouts.Layout.master')
 @section('title')
     HomePage
 @endsection
@@ -29,10 +29,10 @@
                     </div>
                 @else
                     <div class="col-md-8">
-                        @include('layouts.GiamSat.CurrentVideo')
+                        @include('Layouts.GiamSat.CurrentVideo')
                     </div>
                     <div class="col-md-4">
-                        @include('layouts.GiamSat.FormSearch')
+                        @include('Layouts.GiamSat.FormSearch')
                     </div>
                 @endif
             </div>

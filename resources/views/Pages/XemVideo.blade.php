@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('Layouts.Layout.master')
 @section('title')
     XemVideo
 @endsection

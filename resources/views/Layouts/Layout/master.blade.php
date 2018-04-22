@@ -37,17 +37,17 @@
     </head>
     <body>
         <header>
-            @include('layouts.header')
+            @include('Layouts.Layout.header')
         </header>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    @include('layouts.body')
+                    @include('Layouts.Layout.body')
                 </div>
             </div>
         </div>
         <footer>
-            @include('layouts.footer')
+            @include('Layouts.Layout.footer')
         </footer>
     </body>
 </html>

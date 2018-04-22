@@ -3,7 +3,7 @@
         Thông tin giám sát
     </div>
     <div class="card-body">
-        <form method='POST'>
+        {{-- <form method='POST'> --}}
             <div class="form-group">
                 <label for="doituong">Tên đối tượng</label>
                 <div class="dropdown">
@@ -56,7 +56,7 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Xem video</button>
             </div>
-        </form>
+        {{-- </form> --}}
     </div>
 </div>
 <div>
