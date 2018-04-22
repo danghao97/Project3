@@ -73,9 +73,9 @@ class MyController extends Controller
     public function QLHT(Request $req)
     {
         $loai_doi_tuongs = \App\LoaiDoiTuong::all();
-        $doi_tuongs = \App\DoiTuong::paginate(2, ['*'], 'page_dt');
-        $users = \App\User::paginate(2, ['*'], 'page_nd');
-        $videos = \App\Video::paginate('2', ['*'], 'page_vd');
+        $doi_tuongs = \App\DoiTuong::paginate(5, ['*'], 'page_dt');
+        $users = \App\User::paginate(5, ['*'], 'page_nd');
+        $videos = \App\Video::paginate(5, ['*'], 'page_vd');
 
         $tab_active = 'qldt';
         if ($req->has('page_dt')) {
