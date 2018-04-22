@@ -14,7 +14,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Mã số:</label> {{$video->id_video}}<br>
-                                <label>Đối tượng:</label> {{$video->DoiTuong->ten}}<br>
+                                <label>Đối tượng:</label> {{$video->DoiTuong->ten_doi_tuong}}<br>
                                 <label>Tên video:</label> {{$video->ten_video}}<br>
                                 <a class="btn btn-primary" href="QLHT/XoaVD/{{$video->id_video}}" role="button">Xóa</a>
                             </div>
