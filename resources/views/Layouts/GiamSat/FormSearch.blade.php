@@ -1,46 +1,50 @@
-<div class="card border-success">
-    <div class="h5 card-header text-success">
-        Thông tin giám sát
+@section('CustomCSS')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
+@endsection
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thông tin giám sát</h3>
     </div>
-    <div class="card-body">
+    <div class="panel-body">
         {{-- <form method='POST'> --}}
             <div class="form-group">
                 <label for="doituong">Tên đối tượng</label>
                 <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         Lựa chọn đối tượng
                         <span class="caret"></span>
                     </button>
-                    <div class="dropdown-menu">
-                        <input class="form-control" id="doituong" type="text" placeholder="Tìm kiếm">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li>
+                            <input class="form-control input-sm" id="doituong" type="text" placeholder="Tìm kiếm">
+                        </li>
                         @foreach($doi_tuongs as $value)
-							<a class="dropdown-item" href="/home/{{$value->id_doi_tuong}}">{{$value->ten_doi_tuong}}</a>
-						@endforeach
-                    </div>
+                            <li><a href="/home/{{$value->id_doi_tuong}}">{{$value->ten_doi_tuong}}</a></li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
             <div class="form-group">
-                <label for="ngay">Từ ngày</label>
+                <label for="daystart">Từ ngày</label>
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="date" class="form-control">
+                        <input id="daystart" type="date" class="form-control">
                     </div>
                     <div class="col-md-6">
                         <div class="input-group bootstrap-timepicker timepicker">
                             <input id="timefrom" type="text" class="form-control input-small">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                         </div>
-                        <script type="text/javascript">
-                            $('#timefrom').timepicker();
-                        </script>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="ngay">Đến ngày</label>
+                <label for="dayend">Đến ngày</label>
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="date"  class="form-control">
+                        <input id="dayend" type="date"  class="form-control">
                     </div>
                     <div class="col-md-6">
                         <div class="input-group bootstrap-timepicker timepicker">
@@ -48,9 +52,6 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                         </div>
                     </div>
-                    <script type="text/javascript">
-                        $('#timeto').timepicker();
-                    </script>
                 </div>
             </div>
             <div class="form-group">
@@ -60,20 +61,18 @@
     </div>
 </div>
 <div>
-    <div class="card border-success">
-        <div class="h5 card-header text-success">
-            Videos
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Videos</h3>
         </div>
-        <div class="card-body">
+        <div class="panel-body">
             @if (isset($videos))
-                <div id = "myCarousel" class = "carousel slide" data-ride="carousel">
-                    <div class = "carousel-inner">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
                         @php ($first = true)
                         @foreach($videos as $video)
-                            <div class = "carousel-item{!!($first ? ' active' : '')!!}">
-                                <div class = "thumbnail">
-                                    <img class="img-fluid" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/image" alt="Generic placeholder thumbnail">
-                                </div>
+                            <div class="item{!!($first ? ' active' : '')!!}">
+                                <img class="img-responsive" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/image" alt="Generic placeholder thumbnail">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h4>{{$video->ten_video}}</h4>
                                     <p>{{$video->thoi_gian}}</p>
@@ -82,12 +81,12 @@
                             @php ($first = false)
                         @endforeach
                     </div>
-                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
@@ -99,3 +98,12 @@
         </div>
     </div>
 </div>
+
+@section('CustomJS')
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript">
+        $('#timefrom').timepicker();
+        $('#timeto').timepicker();
+    </script>
+@endsection

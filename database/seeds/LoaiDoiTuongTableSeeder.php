@@ -20,7 +20,8 @@ class LoaiDoiTuongTableSeeder extends Seeder
         $this->save('Tội phạm truy nã', '3');
     }
 
-    public function save($ten_loai, $id_cap_do) {
+    public function save($ten_loai, $id_cap_do)
+    {
         $object = new \App\LoaiDoiTuong();
         $object->ten_loai = $ten_loai;
         $object->id_cap_do = $id_cap_do;

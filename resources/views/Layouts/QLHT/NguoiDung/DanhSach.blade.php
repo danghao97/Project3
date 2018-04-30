@@ -1,16 +1,16 @@
-<div class="card border-success">
-    <div class="h5 card-header text-success">
-        Danh sách người dùng
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Danh sách người dùng</h3>
     </div>
-    <div class="card-body">
+    <div class="panel-body">
         @if (count($users) == 0)
             <div class="h2">
                 Chưa có người dùng, hãy thêm ngay
             </div>
         @else
             @foreach ($users as $user)
-                <div class="card border-success">
-                    <div class="card-body">
+                <div class="panel panel-info">
+                    <div class="panel-body">
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Mã số:</label> {{$user->id}}<br>

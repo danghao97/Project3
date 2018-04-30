@@ -11,12 +11,7 @@ class VideoTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->save('Video 1', 'F:\video.mp4', '3MB', '00:43');
-        $this->save('Video 2', 'F:\video.mp4', '6MB', '04:24');
-        $this->save('Video 3', 'F:\video.mp4', '5MB', '00:59');
-        $this->save('Video 4', 'F:\video.mp4', '2MB', '01:30');
-        $this->save('Video 5', 'F:\video.mp4', '6MB', '05:22');
-        $this->save('Video 6', 'F:\video.mp4', '1MB', '06:37');
+        // $this->save('Video 1', 'F:\video.mp4', '3MB', '00:43');
     }
 
     public function save($ten_video, $duong_dan, $kich_thuoc, $thoi_gian)

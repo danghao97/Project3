@@ -7,15 +7,18 @@ use Illuminate\Support\MessageBag;
 
 class ConfigController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('ConfigMiddle');
     }
 
-    public function Config() {
+    public function Config()
+    {
         return view('pages.config');
     }
 
-    public function Save(Request $req) {
+    public function Save(Request $req)
+    {
         $user = new \App\User();
         $user->name = $req->name;
         $user->email = $req->email;

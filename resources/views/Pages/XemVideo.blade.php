@@ -1,9 +1,42 @@
-@extends('Layouts.Layout.master')
-@section('title')
+@extends('Layouts.CustomLayout.Layout')
+@section('CustomTitle')
     XemVideo
 @endsection
-@section('navitem')xemvideo @endsection
-@section('content')
+
+@section('NavBar')xemvideo @endsection
+
+@section('CustomCSS')
+    <style media="screen">
+        .list {
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    </style>
+@endsection
+
+@section('Content')
+    <div class="panel">
+        <div class="panel-body">
+            <div class="row">
+                @if (isset($error))
+                    <div class="h3">
+                        {{$error}}
+                    </div>
+                @else
+                    <div class="col-md-8">
+                        @include('Layouts.XemVideo.CurrentVideo')
+                    </div>
+                    <div class="col-md-4">
+                        @include('Layouts.XemVideo.ListVideo')
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('CustomJS')
     <script type="text/javascript">
         function playPause() {
             var myVideo = $('#current');
@@ -20,29 +53,4 @@
             myVideo[0].webkitRequestFullScreen();
         }
     </script>
-    <style media="screen">
-        .list {
-            max-height: 500px;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-    </style>
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                @if (isset($error))
-                    <div class="h1">
-                        {{$error}}
-                    </div>
-                @else
-                    <div class="col-md-8">
-                        @include('layouts.XemVideo.CurrentVideo')
-                    </div>
-                    <div class="col-md-4">
-                        @include('layouts.XemVideo.ListVideo')
-                    </div>
-                @endif
-            </div>
-        </div>
-    </div>
 @endsection

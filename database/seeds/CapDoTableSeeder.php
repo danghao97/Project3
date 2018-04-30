@@ -11,19 +11,16 @@ class CapDoTableSeeder extends Seeder
      */
     public function run()
     {
-        $capdo = new \App\CapDo();
-        $capdo->ten_cap_do = 'Cấp độ 1';
-        $capdo->muc_do_anh_huong = 'Bình thường';
-        $capdo->save();
+        $this->save('Cấp độ 1', 'Bình thường');
+        $this->save('Cấp độ 2', 'Nguy hiểm');
+        $this->save('Cấp độ 3', 'Cực kì nguy hiểm');
+    }
 
+    public function save($ten_cap_do, $muc_do_anh_huong)
+    {
         $capdo = new \App\CapDo();
-        $capdo->ten_cap_do = 'Cấp độ 3';
-        $capdo->muc_do_anh_huong = 'Nguy hiểm';
-        $capdo->save();
-
-        $capdo = new \App\CapDo();
-        $capdo->ten_cap_do = 'Cấp độ 3';
-        $capdo->muc_do_anh_huong = 'Cực kì nguy hiểm';
+        $capdo->ten_cap_do = $ten_cap_do;
+        $capdo->muc_do_anh_huong = $muc_do_anh_huong;
         $capdo->save();
     }
 }

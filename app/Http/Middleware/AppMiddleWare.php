@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
 
-class MyMiddleWare
+class AppMiddleWare
 {
     /**
      * Handle an incoming request.
@@ -20,7 +20,7 @@ class MyMiddleWare
         $num_users = count(\App\User::all());
         if ($num_users == 0) {
             return redirect()->route('config');
-        } else if (Auth::check()) {
+        } elseif (Auth::check()) {
             return $next($request);
         } else {
             $errors = new MessageBag(['title' => 'Bạn chưa đăng nhập vào hệ thống']);

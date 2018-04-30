@@ -1,8 +1,8 @@
-<div class="card border-success">
-    <div class="h5 card-header text-success">
-        {{$video->ten_video}}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{$video->ten_video}}</h3>
     </div>
-    <div class="card-body">
+    <div class="panel-body">
         <div class="embed-responsive embed-responsive-16by9">
             <video id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/video/{{$video->id_video}}"></video>
         </div>

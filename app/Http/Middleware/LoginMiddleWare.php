@@ -19,7 +19,7 @@ class LoginMiddleWare
         $num_users = count(\App\User::all());
         if ($num_users == 0) {
             return redirect()->route('config');
-        } else if (!Auth::check()) {
+        } elseif (!Auth::check()) {
             return $next($request);
         } else {
             return redirect()->route('/');

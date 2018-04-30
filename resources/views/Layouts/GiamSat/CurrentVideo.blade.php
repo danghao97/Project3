@@ -1,8 +1,8 @@
-<div class="card border-success">
-    <div class="h5 card-header text-success">
-        Thông tin đối tượng
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thông tin đối tượng</h3>
     </div>
-    <div class="card-body">
+    <div class="panel-body">
         @if (isset($videos))
             <div class="embed-responsive embed-responsive-16by9">
                 <video id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/video/{{$videos[0]->id_video}}"></video>

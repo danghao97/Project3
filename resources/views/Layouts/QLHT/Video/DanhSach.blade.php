@@ -1,16 +1,16 @@
-<div class="card border-success">
-    <div class="h5 card-header text-success">
-        Danh sách video
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Danh sách video</h3>
     </div>
-    <div class="card-body">
+    <div class="panel-body">
         @if (count($videos) == 0)
             <div class="h2">
                 Chưa có video, hãy thêm ngay
             </div>
         @else
             @foreach ($videos as $video)
-                <div class="card border-success">
-                    <div class="card-body">
+                <div class="panel panel-info">
+                    <div class="panel-body">
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Mã số:</label> {{$video->id_video}}<br>

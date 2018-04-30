@@ -11,39 +11,37 @@
 |
 */
 
-View::share('NodeJS_Port', env('NODEJS_PORT', '3000'));
-
-Route::get('/phpinfo', function() {
+Route::get('/phpinfo', function () {
     phpinfo();
 });
 
-Route::get('/', 'MyController@Home')->name('/');
+Route::get('/', 'AppController@Home')->name('/');
 
-Route::get('/home', 'MyController@Home');
+Route::get('/home', 'AppController@Home');
 
-Route::get('/home/{id_doi_tuong}', 'MyController@Home')->name('home');
+Route::get('/home/{id_doi_tuong}', 'AppController@Home')->name('home');
 
-Route::get('XemVideo', 'MyController@XemVideo');
+Route::get('XemVideo', 'AppController@XemVideo');
 
-Route::get('XemVideo/{id_video}', 'MyController@XemVideo')->name('XemVideo');
+Route::get('XemVideo/{id_video}', 'AppController@XemVideo')->name('XemVideo');
 
-Route::get('QLTK', 'MyController@QLTK');
+Route::get('QLTK', 'AppController@QLTK');
 
-Route::get('QLHT', 'MyController@QLHT')->name('QLHT');
+Route::get('QLHT', 'AppController@QLHT')->name('QLHT');
 
-Route::post('QLHT/ThemDT', 'MyController@ThemDoiTuong');
+Route::post('QLHT/ThemDT', 'AppController@ThemDoiTuong');
 
-Route::get('QLHT/XoaDT/{id_doi_tuong}', 'MyController@XoaDoiTuong');
+Route::get('QLHT/XoaDT/{id_doi_tuong}', 'AppController@XoaDoiTuong');
 
-Route::post('QLHT/ThemND', 'MyController@ThemNguoiDung');
+Route::post('QLHT/ThemND', 'AppController@ThemNguoiDung');
 
-Route::get('QLHT/XoaND/{id}', 'MyController@XoaNguoiDung');
+Route::get('QLHT/XoaND/{id}', 'AppController@XoaNguoiDung');
 
-Route::post('QLHT/ThemVD', 'MyController@ThemVideo');
+Route::post('QLHT/ThemVD', 'AppController@ThemVideo');
 
-Route::get('QLHT/XoaVD/{id_video}', 'MyController@XoaVideo');
+Route::get('QLHT/XoaVD/{id_video}', 'AppController@XoaVideo');
 
-Route::get('logout', 'MyController@Logout');
+Route::get('logout', 'AppController@Logout');
 
 Route::get('config', 'ConfigController@Config')->name('config');
 
@@ -53,7 +51,7 @@ Route::get('login', 'LoginController@Login')->name('login');
 
 Route::post('login', 'LoginController@DoLogin');
 
-Route::get('DelData', function() {
+Route::get('DelData', function () {
     \Artisan::call('migrate:refresh');
     return redirect()->route('/');
 });

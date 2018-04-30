@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UsersTableSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,10 +11,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->save('danghao2', 'danghaopro97@gmail.com', 'matkhau');
+        //
     }
 
-    public function save($name, $email, $password) {
+    public function save($name, $email, $password)
+    {
         $object = new \App\User();
         $object->name = $name;
         $object->email = $email;

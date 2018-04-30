@@ -4,6 +4,6 @@ config.DB_DATABASE = 'homestead';
 config.DB_USERNAME = 'homestead';
 config.DB_PASSWORD = 'secret';
 config.STORAGE_PATH = 'C:/';
-config.PORT = 3000;
+config.PORT = 2222;
 
 module.exports = config;

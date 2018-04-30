@@ -7,11 +7,12 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
 
-class MyController extends Controller
+class AppController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('MyMiddle');
+        $this->middleware('AppMiddle');
+        \View::share('NodeJS_Port', env('NODEJS_PORT', '3000'));
     }
 
     public function Home($id_doi_tuong = null)

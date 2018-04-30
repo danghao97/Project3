@@ -1,8 +1,8 @@
-<div class="card border-success">
-    <div class="h5 card-header text-success">
-        Thêm đối tượng
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thêm đối tượng</h3>
     </div>
-    <div class="card-body">
+    <div class="panel-body">
         @if ($errors->has('dt_title'))
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 {{$errors->first('dt_title')}}
@@ -15,23 +15,23 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="dt_name">Tên đối tượng</label>
-                <input id="dt_name" type="text" class="form-control form-control-sm" placeholder="Tên đối tượng" name="dt_name">
+                <input id="dt_name" type="text" class="form-control input-sm" placeholder="Tên đối tượng" name="dt_name">
             </div>
-            <div class="form-group">
+            <div class="form-group form-group-sm">
                 <label for="dt_namsinh">Tuổi</label>
-                <input id="dt_namsinh" type="text" class="form-control form-control-sm" placeholder="Tuổi" name="dt_namsinh">
+                <input id="dt_namsinh" type="text" class="form-control input-sm" placeholder="Tuổi" name="dt_namsinh">
             </div>
-            <div class="form-group">
+            <div class="form-group form-group-sm">
                 <label for="dt_nghenghiep">Nghề nghiệp</label>
-                <input id="dt_nghenghiep" type="text" class="form-control form-control-sm" placeholder="Nghề nghiệp" name="dt_nghenghiep">
+                <input id="dt_nghenghiep" type="text" class="form-control input-sm" placeholder="Nghề nghiệp" name="dt_nghenghiep">
             </div>
             <div class="form-group">
                 <label for="dt_chucvu">Chức vụ</label>
-                <input id="dt_chucvu" type="text" class="form-control form-control-sm" placeholder="Chức vụ" name="dt_chucvu">
+                <input id="dt_chucvu" type="text" class="form-control input-sm" placeholder="Chức vụ" name="dt_chucvu">
             </div>
             <div class="form-group">
                 <label for="dt_loaidoituong">Loại đối tượng</label>
-                <select id="dt_loaidoituong" class="form-control form-control-sm" name="dt_loaidoituong">
+                <select id="dt_loaidoituong" class="form-control input-sm" name="dt_loaidoituong">
                     @foreach ($loai_doi_tuongs as $loai_doi_tuong)
                         <option value="{{$loai_doi_tuong->id_loai_doi_tuong}}">{{$loai_doi_tuong->ten_loai}}</option>
                     @endforeach
@@ -39,11 +39,11 @@
             </div>
             <div class="form-group">
                 <label for="dt_photo">Ảnh nhận diện</label>
-                <input id="dt_photo" type="file" class="form-control-file" name="dt_photo">
+                <input id="dt_photo" type="file" class="form-control-file input-sm" name="dt_photo">
             </div>
             <div class="form-group">
                 <label for="dt_video">Video nhận diện</label>
-                <input id="dt_video" type="file" class="form-control-file" name="dt_video">
+                <input id="dt_video" type="file" class="form-control-file input-sm" name="dt_video">
             </div>
             <button type="submit" class="btn btn-primary">Thêm</button>
         </form>

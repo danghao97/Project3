@@ -1,9 +1,32 @@
-@extends('Layouts.Layout.master')
-@section('title')
+@extends('Layouts.CustomLayout.Layout')
+@section('CustomTitle')
     HomePage
 @endsection
-@section('navitem')home @endsection
-@section('content')
+
+@section('NavBar')home @endsection
+
+@section('Content')
+    <div class="panel">
+        <div class="panel-body">
+            <div class="row">
+                @if (isset($error))
+                    <div class="h3">
+                        {{$error}}
+                    </div>
+                @else
+                    <div class="col-md-8">
+                        @include('Layouts.GiamSat.CurrentVideo')
+                    </div>
+                    <div class="col-md-4">
+                        @include('Layouts.GiamSat.FormSearch')
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('CustomJS')
     <script type="text/javascript">
         function playPause() {
             var myVideo = $('#current');
@@ -20,22 +43,4 @@
             myVideo[0].webkitRequestFullScreen();
         }
     </script>
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                @if (isset($error))
-                    <div class="h1">
-                        {{$error}}
-                    </div>
-                @else
-                    <div class="col-md-8">
-                        @include('Layouts.GiamSat.CurrentVideo')
-                    </div>
-                    <div class="col-md-4">
-                        @include('Layouts.GiamSat.FormSearch')
-                    </div>
-                @endif
-            </div>
-        </div>
-    </div>
 @endsection
