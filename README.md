@@ -100,36 +100,37 @@ yum install git
 (Run without root)
 git clone https://github.com/danghao97/Project3.git
 ```
+
 ## Step 2: Change directory (cd) to the cloned folder.
 ```
 cd ./Project3
 ```
+
 ## Step 3: Copy configuration file:
 ```
 Copy file ".env.example" and save as new file named ".env"
 cp .env.example .env
 Copy file "nodejs/config.js.example" and save as new file named "nodejs/config.js"
 cp nodejs/config.js.example nodejs/config.js
-
 ```
+
 ## Step 4: Run in terminal or command prompt:
 ```
   php composer.phar install
 ```
+
 ## Step 5: Run in terminal or command prompt:
 ```
 php artisan key:generate
 ```
+
 ## Step 6: Directory Permissions:
 ```
 chmod a+w -R ./storage
 chmod a+w -R ./bootstrap/cache
 ```
-## Step 7: Install packages of NodeJS:
-```
-npm install
-```
-## Step 8: Change database info in .env file and nodejs/config.js:
+
+## Step 7: Change database info in .env file and nodejs/config.js:
 ```
 DB_DATABASE
 DB_USERNAME
@@ -144,9 +145,15 @@ MAIL_PASSWORD=your_password_or_app_password
 MAIL_ENCRYPTION=tls
 ```
 
-## Step 9: Migrations:
+## Step 8: Migrations:
 ```
 php artisan migrate
+```
+
+## Step 9: Install packages of NodeJS:
+```
+cd nodejs
+npm install
 ```
 
 ## Step 10: Run NodeJS Server:
