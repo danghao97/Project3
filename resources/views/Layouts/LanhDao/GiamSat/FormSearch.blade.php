@@ -22,7 +22,7 @@
                             <input class="form-control input-sm" id="doituong" type="text" placeholder="Tìm kiếm">
                         </li>
                         @foreach($doi_tuongs as $value)
-                            <li><a href="/home/{{$value->id_doi_tuong}}">{{$value->ten_doi_tuong}}</a></li>
+                            <li><a href="/GiamSat/{{$value->id_doi_tuong}}">{{$value->ten_doi_tuong}}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -100,7 +100,7 @@
     </div>
 </div>
 
-@section('CustomJS')
+@section('GiamSatJS')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
     <script type="text/javascript">

@@ -1,9 +1,10 @@
 @extends('Layouts.CustomLayout.Layout')
+
 @section('CustomTitle')
-    XemVideo
+    Video
 @endsection
 
-@section('NavBar')xemvideo @endsection
+@section('NavBar')Video @endsection
 
 @section('CustomCSS')
     <style media="screen">
@@ -16,6 +17,9 @@
 @endsection
 
 @section('Content')
+    <header>
+        @include('Layouts.LanhDao.Header')
+    </header>
     <div class="panel">
         <div class="panel-body">
             <div class="row">
@@ -24,16 +28,19 @@
                         {{$error}}
                     </div>
                 @else
-                    <div class="col-md-8">
-                        @include('Layouts.XemVideo.CurrentVideo')
+                    <div class="col-md-9">
+                        @include('Layouts.Video.CurrentVideo')
                     </div>
-                    <div class="col-md-4">
-                        @include('Layouts.XemVideo.ListVideo')
+                    <div class="col-md-3">
+                        @include('Layouts.Video.ListVideo')
                     </div>
                 @endif
             </div>
         </div>
     </div>
+    <footer>
+        @include('Layouts.LanhDao.Footer')
+    </footer>
 @endsection
 
 @section('CustomJS')

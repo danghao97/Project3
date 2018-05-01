@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\MessageBag;
 
-class LoginMiddleWare
+class QuanlyMiddleWare
 {
     /**
      * Handle an incoming request.
@@ -19,10 +20,17 @@ class LoginMiddleWare
         $num_users = count(\App\User::all());
         if ($num_users == 0) {
             return redirect()->route('Config');
-        } elseif (!Auth::check()) {
+        } elseif (Auth::check()) {
+            $User = Auth::user();
+            if ($User->chuc_vu == 1) {
+                return redirect()->route('VanHanh');
+            } elseif ($User->chuc_vu == 2) {
+                return redirect()->route('GiamSat');
+            }
             return $next($request);
         } else {
-            return redirect()->route('/');
+            $errors = new MessageBag(['title' => 'Bạn chưa đăng nhập vào hệ thống']);
+            return redirect()->route('Login')->withErrors($errors);
         }
     }
 }

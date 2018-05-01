@@ -11,13 +11,13 @@ class LoaiDoiTuongTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->save('Nhân viên', '1');
-        $this->save('Cán bộ', '1');
-        $this->save('Giám đốc', '1');
-        $this->save('Khách hàng', '1');
-        $this->save('Trộm cắp', '2');
-        $this->save('Xã hội đen', '2');
-        $this->save('Tội phạm truy nã', '3');
+        // $this->save('Nhân viên', '1');
+        // $this->save('Cán bộ', '1');
+        // $this->save('Giám đốc', '1');
+        // $this->save('Khách hàng', '1');
+        // $this->save('Trộm cắp', '2');
+        // $this->save('Xã hội đen', '2');
+        // $this->save('Tội phạm truy nã', '3');
     }
 
     public function save($ten_loai, $id_cap_do)

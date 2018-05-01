@@ -7,14 +7,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://{{$_SERVER['SERVER_NAME']}}">CAMERA</a>
+            <a class="navbar-brand" href="http://{{$_SERVER['SERVER_NAME']}}">@yield('HeaderBrand')</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li id="home"><a href="http://{{$_SERVER['SERVER_NAME']}}/home">Home</a></li>
-                <li id="xemvideo"><a href="http://{{$_SERVER['SERVER_NAME']}}/XemVideo">XemVideo</a></li>
-                <li id="qlht"><a href="http://{{$_SERVER['SERVER_NAME']}}/QLHT">QLHT</a></li>
+                <li id="QuanLy"><a href="http://{{$_SERVER['SERVER_NAME']}}/QuanLy">Quản lý</a></li>
+                <li id="VanHanh"><a href="http://{{$_SERVER['SERVER_NAME']}}/VanHanh">Vận hành</a></li>
+                <li id="GiamSat"><a href="http://{{$_SERVER['SERVER_NAME']}}/GiamSat">Giám sát</a></li>
+                @yield('HeaderNavBar')
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -26,7 +27,7 @@
                             <a class="dropdown-item" href="http://{{$_SERVER['SERVER_NAME']}}/DelData">Xóa hết dữ liệu</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="http://{{$_SERVER['SERVER_NAME']}}/logout">Logout</a>
+                            <a class="dropdown-item" href="http://{{$_SERVER['SERVER_NAME']}}/Logout">Logout</a>
                         </li>
                     </ul>
                 </li>

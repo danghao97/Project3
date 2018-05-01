@@ -9,7 +9,7 @@
                     <img class="img-responsive" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/image">
                 </div>
                 <div class="col-md-3">
-                    <a href="/XemVideo/{{$value->id_video}}">{{$value->ten_video}}</a>
+                    <a href="/{{$prefix}}/{{$value->id_video}}">{{$value->ten_video}}</a>
                     <br>
                     {{$value->thoi_gian}}
                 </div>

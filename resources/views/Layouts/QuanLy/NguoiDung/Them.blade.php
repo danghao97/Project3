@@ -11,7 +11,7 @@
                 </button>
             </div>
         @endif
-        <form action='/QLHT/ThemND' method='POST'>
+        <form action='/QuanLy/ThemUser' method='POST'>
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="nd_name">Tên người dùng</label>
@@ -46,7 +46,11 @@
             </div>
             <div class="form-group">
                 <label for="nd_chucvu">Chức vụ</label>
-                <input id="nd_chucvu" type="text" class="form-control input-sm" placeholder="Chức vụ" name="nd_chucvu">
+                <select id="nd_chucvu" class="form-control input-sm" name="nd_chucvu">
+                    @foreach ($chuc_vus as $key => $value)
+                        <option value="{{$key}}">{{$value}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label for="nd_password">Mật khẩu</label>

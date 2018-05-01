@@ -3,7 +3,7 @@
         <h3 class="panel-title">Thêm video</h3>
     </div>
     <div class="panel-body">
-        @if (count($doi_tuongs) == 0)
+        @if (count($all_doi_tuong) == 0)
             <div class="h2">
                 Hãy thêm một đối tượng trước
             </div>
@@ -16,12 +16,12 @@
                     </button>
                 </div>
             @endif
-            <form action="/QLHT/ThemVD" method='POST'>
+            <form action="/VanHanh/ThemVideo" method='POST'>
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="vd_dt">Đối tượng</label>
                     <select id="vd_dt" class="form-control input-sm" name="vd_dt">
-                        @foreach ($doi_tuongs as $doi_tuong)
+                        @foreach ($all_doi_tuong as $doi_tuong)
                             <option value="{{$doi_tuong->id_doi_tuong}}">{{$doi_tuong->ten_doi_tuong}}</option>
                         @endforeach
                     </select>

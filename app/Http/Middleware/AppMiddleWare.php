@@ -19,12 +19,19 @@ class AppMiddleWare
     {
         $num_users = count(\App\User::all());
         if ($num_users == 0) {
-            return redirect()->route('config');
+            return redirect()->route('Config');
         } elseif (Auth::check()) {
-            return $next($request);
+            $User = Auth::user();
+            if ($User->chuc_vu == 0) {
+                return redirect()->route('QuanLy');
+            } elseif ($User->chuc_vu == 1) {
+                return redirect()->route('VanHanh');
+            } else {
+                return redirect()->route('GiamSat');
+            }
         } else {
             $errors = new MessageBag(['title' => 'Bạn chưa đăng nhập vào hệ thống']);
-            return redirect()->route('login')->withErrors($errors);
+            return redirect()->route('Login')->withErrors($errors);
         }
     }
 }

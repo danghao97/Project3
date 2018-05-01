@@ -23,6 +23,10 @@ class LoginController extends Controller
         $email = $req->email;
         $password = $req->password;
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            $User = Auth::user();
+            if ($User->chuc_vu == 0) {
+                return redirect()->route('QuanLy');
+            }
             return redirect()->route('/');
         } else {
             $errors = new MessageBag(['title' => 'Email hoặc mật khẩu không chính xác']);

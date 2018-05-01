@@ -16,7 +16,7 @@
                                 <label>Mã số:</label> {{$user->id}}<br>
                                 <label>Tên:</label> {{$user->name}}<br>
                                 <label>Email:</label> {{$user->email}}<br>
-                                <a class="btn btn-primary" href="QLHT/XoaND/{{$user->id}}" role="button">Xóa</a>
+                                <a class="btn btn-primary" href="QuanLy/XoaUser/{{$user->id}}" role="button">Xóa</a>
                             </div>
                             <div class="col-md-4">
                                 <label>Giới tính:</label> {{$user->gioi_tinh}}<br>
@@ -26,7 +26,7 @@
                             <div class="col-md-4">
                                 <label>Năm sinh:</label> {{$user->nam_sinh}}<br>
                                 <label>Đơn vị:</label> {{$user->don_vi}}<br>
-                                <label>Chức vụ:</label> {{$user->chuc_vu}}
+                                <label>Chức vụ:</label> {{$chuc_vus[$user->chuc_vu]}}
                             </div>
                         </div>
                     </div>

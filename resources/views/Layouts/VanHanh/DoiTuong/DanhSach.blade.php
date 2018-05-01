@@ -30,7 +30,7 @@
                                         @else
                                             <img class="img-responsive" src="data:image;base64,{{$doi_tuong->photo}}" alt="">
                                         @endif
-                                        <br><a class="btn btn-primary" href="QLHT/XoaDT/{{$doi_tuong->id_doi_tuong}}" role="button">Xóa</a>
+                                        <br><a class="btn btn-primary" href="VanHanh/XoaDoiTuong/{{$doi_tuong->id_doi_tuong}}" role="button">Xóa</a>
                                     </div>
                                     <div class="col-md-4">
                                         <label>Mã số:</label> {{$doi_tuong->id_doi_tuong}}<br>
