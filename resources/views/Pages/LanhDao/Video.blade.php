@@ -28,10 +28,10 @@
                         {{$error}}
                     </div>
                 @else
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         @include('Layouts.Video.CurrentVideo')
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         @include('Layouts.Video.ListVideo')
                     </div>
                 @endif
