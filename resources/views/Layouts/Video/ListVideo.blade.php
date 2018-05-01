@@ -6,7 +6,9 @@
         <div class="list">
             @foreach($videos as $value)
                 <div class="col-md-9">
-                    <img class="img-responsive" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/image">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video id="List{{$value->id_video}}" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/video/{{$value->id_video}}"></video>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <a href="/{{$prefix}}/{{$value->id_video}}">{{$value->ten_video}}</a>
