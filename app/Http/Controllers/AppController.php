@@ -21,14 +21,14 @@ class AppController extends Controller
         if ($User->chuc_vu != 1 && $User->chuc_vu != 2) {
             // Chỉ VHHT và LD được phép truy cập
             $params = ['error' => 'Bạn không được phép truy cập'];
-            return view('pages.Video', $params);
+            return view('Pages.Video', $params);
         }
         if ($id_video == null) {
             $videos = \App\Video::all();
             $num = count($videos);
             if ($num == 0) {
                 $params = ['error' => 'Hiện chưa có video nào'];
-                return view('pages.Video', $params);
+                return view('Pages.Video', $params);
             }
             return redirect()->route("Video", ['id_video' => $videos[0]->id_video]);
         }
@@ -42,7 +42,7 @@ class AppController extends Controller
                 'videos' => $videos
             ];
         }
-        return view('pages.Video', $params);
+        return view('Pages.Video', $params);
     }
 
     public function DoiTuong()
@@ -51,7 +51,7 @@ class AppController extends Controller
         if ($User->chuc_vu != 1) {
             // Chỉ VHHT được phép truy cập
             $params = ['error' => 'Bạn không được phép truy cập'];
-            return view('pages.DoiTuong', $params);
+            return view('Pages.DoiTuong', $params);
         }
         $loai_doi_tuongs = \App\LoaiDoiTuong::all();
         $doi_tuongs = \App\DoiTuong::paginate(5, ['*'], 'page_dt');
@@ -67,7 +67,7 @@ class AppController extends Controller
         if ($User->chuc_vu != 0) {
             // Chỉ QLHT được phép truy cập
             $params = ['error' => 'Bạn không được phép truy cập'];
-            return view('pages.QuanLy', $params);
+            return view('Pages.QuanLy', $params);
         }
         \View::share('chuc_vus', ['Quản lý hệ thống', 'Vận hành hệ thống', 'Lãnh đạo']);
         $users = \App\User::paginate(5, ['*'], 'page_nd');
@@ -80,7 +80,7 @@ class AppController extends Controller
         } elseif ($req->has('page_vd')) {
             $tab_active = 'qlvd';
         }
-        return view('pages.QuanLy', [
+        return view('Pages.QuanLy', [
             'tab_active' => $tab_active,
             'users' => $users,
             'doi_tuongs' => $doi_tuongs,
