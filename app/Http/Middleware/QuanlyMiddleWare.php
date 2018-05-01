@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
 
-class QuanlyMiddleWare
+class QuanLyMiddleWare
 {
     /**
      * Handle an incoming request.
