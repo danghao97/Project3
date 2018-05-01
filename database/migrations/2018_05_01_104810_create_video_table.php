@@ -20,7 +20,7 @@ class CreateVideoTable extends Migration
             $table->string('ten_video');
             $table->string('duong_dan');
             $table->string('kich_thuoc');
-            $table->dateTime('thoigian_batdau')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('thoigian_batdau');
             $table->string('thoi_gian');
             $table->timestamps();
         });
