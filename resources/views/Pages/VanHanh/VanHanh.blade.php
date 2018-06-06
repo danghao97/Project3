@@ -11,16 +11,24 @@
     <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
         <ul class="nav nav-tabs nav-justified" role="tablist">
             <li role="presentation" class="{!!($tab_active == 'DoiTuong' ? 'active' : '')!!}">
-                <a href="#Tab_DoiTuong" role="tab" data-toggle="tab" aria-controls="Tab_DoiTuong" aria-expanded="true">Đối tượng</a>
+                <a href="#Tab_DoiTuong" role="tab" data-toggle="tab" aria-controls="Tab_DoiTuong" aria-expanded="true">
+                    Đối tượng ({{count(\App\DoiTuong::all())}})
+                </a>
             </li>
             <li role="presentation" class="{!!($tab_active == 'Video' ? 'active' : '')!!}">
-                <a href="#Tab_Video" role="tab" data-toggle="tab" aria-controls="Tab_Video" aria-expanded="true">Video</a>
+                <a href="#Tab_Video" role="tab" data-toggle="tab" aria-controls="Tab_Video" aria-expanded="true">
+                    Video ({{count(\App\Video::all())}})
+                </a>
             </li>
             <li role="presentation">
-                <a href="#Tab_CapDo" role="tab" data-toggle="tab" aria-controls="Tab_CapDo" aria-expanded="true">Cấp độ</a>
+                <a href="#Tab_CapDo" role="tab" data-toggle="tab" aria-controls="Tab_CapDo" aria-expanded="true">
+                    Cấp độ ({{count(\App\CapDo::all())}})
+                </a>
             </li>
             <li role="presentation">
-                <a href="#Tab_LoaiDoiTuong" role="tab" data-toggle="tab" aria-controls="Tab_LoaiDoiTuong" aria-expanded="true">Loại đối tượng</a>
+                <a href="#Tab_LoaiDoiTuong" role="tab" data-toggle="tab" aria-controls="Tab_LoaiDoiTuong" aria-expanded="true">
+                    Loại đối tượng ({{count(\App\LoaiDoiTuong::all())}})
+                </a>
             </li>
         </ul>
 

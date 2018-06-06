@@ -1,6 +1,6 @@
 <div class="panel panel-info">
     <div class="panel-heading">
-        <h3 class="panel-title">Đối tượng <small>({{count(\App\DoiTuong::all())}})</small></h3>
+        <h3 class="panel-title">Đối tượng</small></h3>
     </div>
     <div class="panel-body">
         @if (count($doi_tuongs) == 0)

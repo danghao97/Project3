@@ -1,6 +1,6 @@
 <div class="panel panel-info">
     <div class="panel-heading">
-        <h3 class="panel-title">Danh sách video</h3>
+        <h3 class="panel-title">Danh sách video</small></h3>
     </div>
     <div class="panel-body">
         @if (count($videos) == 0)
