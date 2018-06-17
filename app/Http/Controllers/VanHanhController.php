@@ -51,16 +51,30 @@ class VanHanhController extends Controller
         }
         $video = \App\Video::find($id_video);
         $videos = \App\Video::all();
+        $doi_tuongs = \App\DoiTuong::all();
         $params = ['error' => 'Video không tồn tại'];
         if ($video != null) {
             $params = [
                 'prefix' => 'VanHanh/Video',
                 'id_video' => $id_video,
                 'video' => $video,
-                'videos' => $videos
+                'videos' => $videos,
+                'doi_tuongs' => $doi_tuongs,
+                'doi_tuong_xuat_hiens' => $video->DoiTuongXuatHiens(),
             ];
         }
         return view('Pages.VanHanh.Video', $params);
+    }
+
+    public function AddObjectToVideo(Request $req)
+    {
+        $dtxh = new \App\DoiTuongXuatHien();
+        $dtxh->id_video = $req->idv;
+        $dtxh->id_doi_tuong = $req->ido;
+        $dtxh->thoi_diem_xuat_hien = $req->tdxh;
+        $dtxh->thoi_gian_xuat_hien = $req->tgxh;
+        $dtxh->save();
+        return 'ok';
     }
 
     public function AddCapDo(Request $req)

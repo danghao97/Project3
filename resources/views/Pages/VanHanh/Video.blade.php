@@ -42,22 +42,3 @@
         @include('Layouts.VanHanh.Footer')
     </footer>
 @endsection
-
-@section('CustomJS')
-    <script type="text/javascript">
-        function playPause() {
-            var myVideo = $('#current');
-            if (myVideo[0].paused) {
-                myVideo[0].play();
-            } else{
-                myVideo[0].pause();
-            }
-        }
-
-        function fullScreen() {
-            var myVideo = $('#current');
-            console.log(myVideo[0]);
-            myVideo[0].webkitRequestFullScreen();
-        }
-    </script>
-@endsection

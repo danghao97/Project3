@@ -13,4 +13,9 @@ class Video extends Model
     {
         return $this->belongsTo('App\DoiTuong', 'id_doi_tuong', 'id_doi_tuong');
     }
+
+    public function DoiTuongXuatHiens()
+    {
+        return \App\DoiTuongXuatHien::where('id_video', $this->id_video)->get();
+    }
 }

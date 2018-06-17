@@ -20,6 +20,8 @@ Route::prefix('VanHanh')->group(function () {
 
     Route::get('Video/{id_video}', 'VanHanhController@Video')->name('VanHanh.Video');
 
+    Route::post('AddObjectToVideo', 'VanHanhController@AddObjectToVideo');
+
     Route::post('AddCapDo', 'VanHanhController@AddCapDo');
 
     Route::get('DelCapDo/{id_cap_do}', 'VanHanhController@DelCapDo');
@@ -38,9 +40,9 @@ Route::prefix('VanHanh')->group(function () {
 });
 
 Route::prefix('GiamSat')->group(function () {
-    Route::get('Video', 'LanhDaoController@Video');
+    // Route::get('Video', 'LanhDaoController@Video');
 
-    Route::get('Video/{id_video}', 'LanhDaoController@Video')->name('GiamSat.Video');
+    // Route::get('Video/{id_video}', 'LanhDaoController@Video')->name('GiamSat.Video');
 
     Route::get('/', 'LanhDaoController@GiamSat')->name('GiamSat');
 

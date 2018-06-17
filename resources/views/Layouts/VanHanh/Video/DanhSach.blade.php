@@ -8,6 +8,7 @@
                 Chưa có video, hãy thêm ngay
             </div>
         @else
+            {!!$videos->links()!!}
             @foreach ($videos as $video)
                 <div class="panel panel-info">
                     <div class="panel-body">

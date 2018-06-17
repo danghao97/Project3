@@ -62,13 +62,15 @@ class LanhDaoController extends Controller
         }
         $video = \App\Video::find($id_video);
         $videos = \App\Video::all();
+        $doi_tuongs = \App\DoiTuong::all();
         $params = ['error' => 'Video không tồn tại'];
         if ($video != null) {
             $params = [
                 'prefix' => 'GiamSat/Video',
                 'id_video' => $id_video,
                 'video' => $video,
-                'videos' => $videos
+                'videos' => $videos,
+                'doi_tuongs' => $doi_tuongs,
             ];
         }
         return view('Pages.LanhDao.Video', $params);
