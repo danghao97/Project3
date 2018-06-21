@@ -11,9 +11,9 @@ class CapDoTableSeeder extends Seeder
      */
     public function run()
     {
-        // $this->save('Cấp độ 1', 'Bình thường');
-        // $this->save('Cấp độ 2', 'Nguy hiểm');
-        // $this->save('Cấp độ 3', 'Cực kì nguy hiểm');
+        $this->save('Cấp độ 1', 'Bình thường');
+        $this->save('Cấp độ 2', 'Nguy hiểm');
+        $this->save('Cấp độ 3', 'Cực kì nguy hiểm');
     }
 
     public function save($ten_cap_do, $muc_do_anh_huong)

@@ -49,7 +49,7 @@
                                     <div class="col-md-5">
                                         <label>Videos:</label>
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <video id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/doi_tuong/video/{{$doi_tuong->id_doi_tuong}}.{{$doi_tuong->video_extension}}"></video>
+                                            <video controls id="current" class="embed-responsive-item" src="http://{{$_SERVER['SERVER_NAME']}}:{{$NodeJS_Port}}/doi_tuong/video/{{$doi_tuong->id_doi_tuong}}.{{$doi_tuong->video_extension}}"></video>
                                         </div>
                                     </div>
                                 </div>
