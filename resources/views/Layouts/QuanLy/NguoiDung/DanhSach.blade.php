@@ -1,6 +1,6 @@
 <div class="panel panel-info">
     <div class="panel-heading">
-        <h3 class="panel-title">Danh sách người dùng</h3>
+        <h3 class="panel-title">Danh sách người dùng <small>({{count(\App\User::all())}})</small></h3>
     </div>
     <div class="panel-body">
         @if (count($users) == 0)
